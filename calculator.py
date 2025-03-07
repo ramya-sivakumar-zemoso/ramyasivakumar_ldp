@@ -1,5 +1,5 @@
-a=int(input("Enter the first value:")
-b=int(input("Enter the second value:")
+a=int(input("Input the first value:")
+b=int(input("Input the second value:")
 def add(x,y):
     return a+b
 print(add(a,b))
