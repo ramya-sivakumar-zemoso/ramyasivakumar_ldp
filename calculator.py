@@ -6,3 +6,6 @@ print(add(a,b))
 def sub(x,y):
     return a-b
 print(sub(a,b))
+def mul(x,y):
+    return a*b
+print(mul(a,b))
