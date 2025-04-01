@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramya Sivakumar Portfolio</title>
+    <link rel="stylesheet" href="portfolio-style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="nav">
+        <div class="header">
+            <ul class="tabs">
+                <li><a href="#intro" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="#contact" class="nav-link">Contact Me</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Intro Section -->
+    <div class="intro section" id="intro">
+        <img class="profile" src="ramya-profile.jpg" alt="Profile pic of Ramya">
+        <p class="intro-text">Ramya Sivakumar<br> Dev-Intern<br>Zemoso Technologies</p>
+
+        <div class="social-media-row">
+            <a href="https://www.linkedin.com/in/ramya-sivakumar27/" target="_blank">
+                <img src="linkedin-in-brands.svg" alt="LinkedIn">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <img src="instagram-brands.svg" alt="Instagram">
+            </a>
+            <a href="https://github.com/ramya-sivakumar-zemoso/ramyasivakumar_ldp.git" target="_blank">
+                <img src="github-brands.svg" alt="GitHub">
+            </a>
+        </div>
+    </div>
+
+    <div class="about section" id="about">
+        <h3>About Me</h3>
+        <h2>Hello, I’m Ramya Sivakumar</h2>
+        <p>
+            Currently working as a Dev-Intern at Zemoso Technologies and a Computer Science Engineering student at Meenakshi Sundararajan Engineering College.
+            Passionate about full-stack development, data science, programming, and software development.
+        </p>
+        <p>
+            I have hands-on experience with frontend development, working on projects like the Nest School Application using Flutter & Firebase and developing a Food Ordering App using the MERN stack.
+        </p>
+        <p>
+            Active in the Adyant Coding Club as the Secretary and serving as the Placement Coordinator of my class.
+            Excited to collaborate and work on innovative tech projects!
+        </p>
+        <p><strong>Email:</strong> <a href="mailto:ramya.sivakumar@zemosolabs.com">ramya.sivakumar@zemosolabs.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+919361842195">+91 9361842195</a></p>
+        <a href="https://acrobat.adobe.com/id/urn:aaid:sc:ap:24273ebf-aeee-422c-8dd0-52643d8ada88" target="_blank">
+            <button class="download-btn">Download CV</button>
+        </a>
+    </div>
+
+    <div class="photo-gallery section" id="gallery">
+        <img src="image1.jpg" alt="Project Image">
+        <img src="image2.jpg" alt="Project Image">
+        <img src="image3.jpg" alt="Project Image">
+        <img src="image4.jpg" alt="Project Image">
+        <img src="image5.jpg" alt="Project Image">
+        <img src="image6.jpg" alt="Project Image">
+    </div>
+
+    <div class="grid-container section" id="contact">
+        <p class="contact-title">GET IN TOUCH</p>
+        <form action="" method="POST" target="_self">
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" placeholder="Enter your First Name" pattern="[A-Za-z]{2,}" required>
+    
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" placeholder="Enter your Last Name" pattern="[A-Za-z]{2,}" required>
+    
+            <label for="number">Contact Number:</label>
+            <input type="tel" id="number" name="number" placeholder="Enter your Mobile Number" pattern="[0-9]{10,15}" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email ID" required>
+    
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Your message" required></textarea>
+    
+            <input type="submit" value="SEND">
+            <p class="success-message">Message Sent Successfully!</p>
+        </form>
+    </div>
+
+    <footer>
+        <p>Copyright © 2024 Ramya Sivakumar | All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
