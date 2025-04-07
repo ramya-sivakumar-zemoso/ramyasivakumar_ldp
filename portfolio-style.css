@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+                url('https://img.freepik.com/premium-photo/distribution-black-lines-dots-white-space-digital-background-data-network-connection-3d-rendering_745045-56.jpg?semt=ais_hybrid');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+.nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 15px 0;
+    z-index: 1000;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tabs {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.tabs li {
+    display: inline-block;
+}
+
+.tabs a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    transition: 0.3s;
+}
+
+
+.tabs a:hover, 
+.tabs a:focus, 
+.tabs a:target {
+    text-decoration: underline;
+    color: #00adb5;
+}
+
+.intro {
+    text-align: center;
+    padding-top: 20vh;
+}
+
+.intro p {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+img.profile {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-top: 15px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+    object-fit: cover;
+}
+
+img.profile:hover {
+    transform: scale(1.05);
+}
+
+
+.social-media-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 15px;
+}
+
+.social-media-row img {
+    width: 40px;
+    transition: transform 0.3s;
+}
+
+.social-media-row img:hover {
+    transform: scale(1.2);
+}
+
+.about {
+    max-width: 70%;
+    margin: 80px auto;
+    text-align: justify;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    line-height: 1.8;
+}
+
+.about h3 {
+    color: #00adb5;
+}
+
+.about p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+
+.about p a {
+    color: #00adb5;
+    text-decoration: none;
+}
+
+.about p a:hover {
+    text-decoration: underline;
+}
+
+.download-btn {
+    background-color: #00adb5;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.download-btn:hover {
+    background: #007b7f;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    max-width: 80%;
+    margin: 50px auto;
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.photo-gallery img:hover {
+    transform: scale(2);
+}
+
+.grid-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #00adb5;
+}
+
+#contact label {
+    display: block;
+    text-align:left ;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.grid-container input, 
+.grid-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #00adb5;
+    border-radius: 5px;
+    background: transparent;
+    color: white;
+}
+
+.grid-container textarea {
+    height: 100px;
+    resize: none;
+}
+
+.grid-container input[type="submit"] {
+    background-color: #00adb5;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.grid-container input[type="submit"]:hover {
+    background: #007b7f;
+}
+
+footer {
+    text-align: center;
+    background: #1c1c1c;
+    color: white;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.success-message {
+    display: none;
+    color: green;
+    font-weight: bold;
+}
+
+form:focus + .success-message {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .about {
+        max-width: 90%;
+    }
+
+    .photo-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .grid-container {
+        max-width: 90%;
+    }
+}
