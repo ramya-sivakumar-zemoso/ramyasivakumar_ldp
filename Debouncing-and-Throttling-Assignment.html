@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search with Debounce & Throttle</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 30px;
+      }
+      input[type='text'] {
+        padding: 8px;
+        width: 300px;
+        font-size: 16px;
+      }
+      .results {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Search</h2>
+    <input type="text" id="searchInput" placeholder="Start typing..." />
+    <div class="results" id="results"></div>
+
+    <script>
+      const input = document.getElementById('searchInput');
+      const results = document.getElementById('results');
+
+      // Simulated "search" function
+      function search(query) {
+        results.textContent = `Searching for: "${query}"`;
+      }
+
+      // Debounce utility
+      function debounce(func, delay) {
+        let timeout;
+        return function (...args) {
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func.apply(this, args), delay);
+        };
+      }
+
+      // Throttle utility
+      function throttle(func, limit) {
+        let lastCall = 0;
+        return function (...args) {
+          const now = Date.now();
+          if (now - lastCall >= limit) {
+            lastCall = now;
+            func.apply(this, args);
+          }
+        };
+      }
+
+      // Combine debounce and throttle
+      const debouncedSearch = debounce(throttle(search, 300), 500);
+
+      // Add input event listener
+      input.addEventListener('input', (e) => {
+        const query = e.target.value.trim();
+        if (query) {
+          debouncedSearch(query);
+        } else {
+          results.textContent = '';
+        }
+      });
+    </script>
+  </body>
+</html>

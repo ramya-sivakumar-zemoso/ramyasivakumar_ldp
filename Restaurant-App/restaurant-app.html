@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant App</title>
+    <link rel="stylesheet" href="reaturant-app.css" />
+  </head>
+  <body>
+    <section class="header" id="header">RapidServe - Order Application</section>
+<section class="tables">
+    <section class="left-section">
+      <section class="table-list">
+        <input type="text"
+        placeholder="Search Table"
+        id="table-search-input"
+        oninput="filterTables()" class="table-search-bar"
+      />
+      <span id="clear-table-search" onclick="clearTableSearch()">×</span>
+        <section
+          class="table1"
+          onclick="openModal(1)"
+          ondragover="dragoverHandler(event)"
+          ondrop="dropHandler(event, 1)"
+        >
+          Table 1
+          <section id="table1-summary" class="table-summary">0 items | ₹0.00</section>
+        </section>
+        <section
+          class="table2"
+          onclick="openModal(2)"
+          ondragover="dragoverHandler(event)"
+          ondrop="dropHandler(event, 2)"
+        >
+          Table 2
+          <section id="table2-summary" class="table-summary">0 items | ₹0.00</section>
+        </section>
+        <section
+          class="table3"
+          onclick="openModal(3)"
+          ondragover="dragoverHandler(event)"
+          ondrop="dropHandler(event, 3)"
+        >
+          Table 3
+          <section id="table3-summary" class="table-summary">0 items | ₹0.00</section>
+        </section>
+        <section
+          class="table4"
+          onclick="openModal(4)"
+          ondragover="dragoverHandler(event)"
+          ondrop="dropHandler(event, 4)"
+        >
+          Table 4
+          <section id="table4-summary" class="table-summary">0 items | ₹0.00</section>
+        </section>
+        <section
+          class="table5"
+          onclick="openModal(5)"
+          ondragover="dragoverHandler(event)"
+          ondrop="dropHandler(event, 5)"
+        >
+          Table 5
+          <section id="table5-summary" class="table-summary">0 items | ₹0.00</section>
+        </section>
+      </section>
+    
+
+      <section class="menu-table">
+        <table>
+          <th id="left-column">
+            MENU
+            <section class="search-bar">
+              <input
+                type="text"
+                placeholder="Search item/cuisine"
+                id="search-input"
+                oninput="filterMenu()"
+              />
+            <span id="clear-search" onclick="clearSearch()">×</span>
+            </section>
+            <section class="filter-by-course">
+              <select id="course-filter" onchange="filterMenu()">
+                <option value="">All Courses</option>
+                <option value="starter">Starter</option>
+                <option value="main">Main</option>
+                <option value="dessert">Dessert</option>
+              </select>
+     
+          </th>
+          <tbody class="menu">
+            <tr>
+              <td>
+                <section
+                  class="chicken-Noodles-details"
+                  id="Chicken-Noodles-details"
+                  draggable="true"
+                  ondragstart="dragstartHandler(event)"
+                  data-item="chicken_noodles"
+                ></section>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <section
+                  class="samosa-chat-details"
+                  id="samosa-chat"
+                  draggable="true"
+                  ondragstart="dragstartHandler(event)"
+                  data-item="samosa_chat"
+                ></section>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <section
+                  class="panner-tikka-details"
+                  id="panner-tikka"
+                  draggable="true"
+                  ondragstart="dragstartHandler(event)"
+                  data-item="panner_tikka"
+                ></section>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <section
+                  class="dahi-poori-details"
+                  id="dahi-poori"
+                  draggable="true"
+                  ondragstart="dragstartHandler(event)"
+                  data-item="dahi_poori"
+                ></section>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="modal" id="popup">
+        <section class="modal-content">
+          <section class="modal-header">
+            Table Orders
+            <span class="close" onclick="closeModal()">&times;</span>
+          </section>
+          <table id="orderTable">
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <section class="modal-footer">
+            <section class="total" id="totalPrice">Total: ₹0.00</section>
+          <button class="close-session" onclick="generateBill()">
+            Generate Bill
+          </button>
+          </section>
+          
+        </section>
+      </section>
+    </section>
+
+    <script src="restaurant-app.js"></script>
+  </body>
+</html>
