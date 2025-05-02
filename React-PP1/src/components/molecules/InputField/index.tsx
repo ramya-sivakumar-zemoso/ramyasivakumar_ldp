@@ -4,12 +4,12 @@ import { styled, Stack, InputAdornment, IconButton } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useState } from 'react';
+import { theme } from '../../../theme';
 
 export const StyledTextField = styled(TextField)(() => ({
-  width: '384px',
-  height: '36px',
-  borderRadius: '4px',
-  border: '1px',
+  width: theme.spacing(192),
+  borderRadius: theme.spacing(2),
+  border: theme.spacing(0.5),
 }));
 
 interface InputField {
@@ -27,17 +27,12 @@ export const InputField = ({
   value,
   onChange,
 }: InputField) => {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   const isPassword = type === 'password';
 
   return (
-    <Stack direction={'column'} gap={1} paddingTop={1}>
-      <Typography
-        text={label}
-        variant="caption"
-        color="primary.main"
-        paddingTop={2}
-      />
+    <Stack gap={2}>
+      <Typography text={label} variant="caption" color="primary.main" />
       <StyledTextField
         type={isPassword && !showPassword ? 'password' : 'text'}
         placeholder={placeholder}

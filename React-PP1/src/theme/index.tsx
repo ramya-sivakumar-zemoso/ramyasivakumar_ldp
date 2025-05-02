@@ -20,10 +20,13 @@ export const theme = createTheme({
     primary: {
       main: '#2c2c2e',
       light: '#696a6e',
+      dark: '#e5e7ed',
     },
     secondary: {
       main: '#224dff',
       dark: '#95aaff',
+      light: 'white',
     },
   },
+  spacing: 2,
 });

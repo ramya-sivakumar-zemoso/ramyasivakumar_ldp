@@ -5,6 +5,7 @@ import Typography from '../../atoms/Typography';
 import { InputField } from '../../molecules/InputField';
 import Button from '../../atoms/Button';
 import Google from '/assets/svgs/Google.svg';
+import { theme } from '../../../theme';
 import Icons from '../../atoms/Icons';
 import { Divider } from '../../atoms/Divider';
 import { RememberBox } from '../../molecules/Remember';
@@ -13,24 +14,22 @@ import { useEffect, useState } from 'react';
 
 interface IStyledButton {
   customcolor?: string;
-  text2?: React.ReactNode;
 }
 
 const StyledDivider = styled(Divider)(() => ({
-  width: '384px',
-  height: '20px',
-  marginTop: '24px',
+  width: theme.spacing(192),
+  height: theme.spacing(10),
 }));
 
 const StyledIcon = styled(Icons)(() => ({
-  height: '16px',
-  width: '16px',
+  height: theme.spacing(8),
+  width: theme.spacing(8),
 }));
 
 const SignUpCard = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [beforeButtonState, afterButtonState] = useState(false);
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [isValid, setisValid] = useState<boolean>(false);
 
   const validateEmail = (email: string) => {
     const EmailRegex = /^[a-zA-Z0-9_.±]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/;
@@ -38,12 +37,11 @@ const SignUpCard = () => {
     return EmailRegex.test(email);
   };
 
-  const handleEmail = (e: string) => {
-    setEmail(e);
-    console.log(e);
+  const handleEmail = (email_para: string) => {
+    setEmail(email_para);
   };
-  const handlePassword = (e: string) => {
-    setPassword(e);
+  const handlePassword = (password_para: string) => {
+    setPassword(password_para);
   };
   const validatePassword = (password: string) => {
     const PasswordRegex =
@@ -54,121 +52,111 @@ const SignUpCard = () => {
 
   useEffect(() => {
     if (validateEmail(email) && validatePassword(password)) {
-      console.log(email);
-      afterButtonState(true);
+      setisValid(true);
     }
   }, [email, password]);
 
   const StyledButton = styled(Button)<IStyledButton>(() => ({
-    backgroundColor: beforeButtonState ? '#224dff' : '#95aaff',
-    borderColor: '#e5e7ed',
+    backgroundColor: isValid
+      ? theme.palette.secondary.main
+      : theme.palette.secondary.dark,
+    borderColor: theme.palette.primary.dark,
     textTransform: 'none',
-    marginTop: '28px',
-    width: '384px',
-    height: '44px',
+    width: theme.spacing(192),
+    height: theme.spacing(22),
     variants: 'body1',
   }));
 
   const StyledSocialButton = styled(Button)<IStyledButton>(() => ({
-    backgroundColor: 'white',
-    borderColor: '#e5e7ed',
+    backgroundColor: theme.palette.secondary.light,
+    borderColor: theme.palette.primary.dark,
     textTransform: 'none',
-    marginTop: '28px',
-    width: '384px',
-    height: '44px',
+    width: theme.spacing(192),
+    height: theme.spacing(22),
     variants: 'body1',
+  }));
+
+  const StyledStack = styled(Stack)(() => ({
+    flexDirection: 'row',
+    width: '95%',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   }));
 
   return (
     <StyledPaper elevation={10}>
-      <Stack padding={5} textAlign={'left'}>
-        <Stack gap={1}>
-          <Typography
-            text={DATA.heading}
-            variant="h1"
-            color="primary.main"
-          ></Typography>
+      <Stack padding={theme.spacing(22)} gap={10}>
+        <Stack gap={6}>
+          <Typography text={DATA.heading} variant="h1" color="primary.main" />
           <Typography
             text={DATA.subtext}
             variant="body2"
             color="primary.light"
-          ></Typography>
+          />
         </Stack>
         <InputField
           type="email"
           placeholder={DATA.placeholderemail}
           label={DATA.email}
           value={email}
-          onChange={(e) => handleEmail(e.target.value)}
+          onChange={(email_para) => handleEmail(email_para.target.value)}
         />
         <InputField
           type="password"
           placeholder={DATA.placeholderpassword}
           label={DATA.password}
           value={password}
-          onChange={(e) => handlePassword(e.target.value)}
+          onChange={(password_para) =>
+            handlePassword(password_para.target.value)
+          }
         />
-        <Stack
-          direction={'row'}
-          display={'flex'}
-          justifyContent={'space-between'}
-          paddingRight={5}
-          marginTop={2}
-          alignItems={'center'}
-        >
+        <StyledStack>
           <RememberBox />
 
           <Typography
-            paddingTop={3}
             text={DATA.forgot}
             textTransform={'none'}
-            color="#224dff"
-          ></Typography>
-        </Stack>
+            color="secondary.main"
+          />
+        </StyledStack>
         <StyledButton
           variant="contained"
           text={DATA.heading}
           disabled={!validateEmail && !validatePassword}
-        ></StyledButton>
+        />
         <StyledDivider
           variant="middle"
-          text={
-            <Typography
-              text="or"
-              variant="body2"
-              color="primary.light"
-            ></Typography>
-          }
+          text={<Typography text="or" variant="body2" color="primary.light" />}
         />
         <StyledSocialButton
           variant="outlined"
           text={
             <Stack direction={'row'} gap={1}>
-              <StyledIcon source={Google}></StyledIcon>
+              <StyledIcon source={Google} alt="Google Icon" />
               <Typography
                 text={DATA.google}
                 variant="body2"
                 color="primary.main"
-              ></Typography>
+              />
             </Stack>
           }
-          customcolor="white"
-        ></StyledSocialButton>
+          customcolor="secondary.light"
+        />
         <StyledSocialButton
           variant="outlined"
           text={
             <Stack direction={'row'} gap={1}>
-              <StyledIcon source={GitHub}></StyledIcon>
+              <StyledIcon source={GitHub} alt="GitHub Icon"></StyledIcon>
               <Typography
                 text={DATA.github}
                 variant="body2"
                 color="primary.main"
-              ></Typography>
+              />
             </Stack>
           }
-          customcolor="white"
-        ></StyledSocialButton>
-        <Stack direction={'row'} gap={1} marginLeft={'85px'} marginTop={'30px'}>
+          customcolor="secondary.light"
+        />
+        <Stack direction={'row'} gap={1} justifyContent={'center'}>
           <Typography
             text={DATA.newuser}
             variant="body2"
@@ -177,7 +165,7 @@ const SignUpCard = () => {
           <Typography
             text={DATA.signup}
             textTransform={'none'}
-            color="#224dff"
+            color="secondary.main"
             variant="body2"
           />
         </Stack>

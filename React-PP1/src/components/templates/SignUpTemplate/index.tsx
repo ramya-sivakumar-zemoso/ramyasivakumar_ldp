@@ -1,18 +1,18 @@
 import { Stack } from '@mui/material';
 
 interface ISignUpTemplate {
-  leftcomponent: React.ReactNode;
-  rightcomponent: React.ReactNode;
+  leftComponent: React.ReactNode;
+  rightComponent: React.ReactNode;
 }
 
-const SignUpTemplate = ({ leftcomponent, rightcomponent }: ISignUpTemplate) => {
+const SignUpTemplate = ({ leftComponent, rightComponent }: ISignUpTemplate) => {
   return (
     <Stack direction={'row'} alignItems={'center'}>
       <Stack flex={1} alignItems={'center'}>
-        {leftcomponent}
+        {leftComponent}
       </Stack>
       <Stack flex={2} alignItems={'center'}>
-        {rightcomponent}
+        {rightComponent}
       </Stack>
     </Stack>
   );

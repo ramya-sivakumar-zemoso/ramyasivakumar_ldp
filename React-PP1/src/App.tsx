@@ -1,12 +1,12 @@
 import { ThemeProvider } from '@emotion/react';
 import { theme } from './theme';
 import './App.css';
-import SignUpPage from './components/pages/SignUpPage';
+import SignUpPage from './pages/SignUpPage';
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <SignUpPage></SignUpPage>
+      <SignUpPage />
     </ThemeProvider>
   );
 };
