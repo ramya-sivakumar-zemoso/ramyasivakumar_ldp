@@ -32,7 +32,7 @@ const SignUpCard = () => {
   const [isValid, setisValid] = useState<boolean>(false);
 
   const validateEmail = (email: string) => {
-    const EmailRegex = /^[a-zA-Z0-9_.±]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/;
+    const EmailRegex = DATA.emailregex;
 
     return EmailRegex.test(email);
   };
@@ -44,8 +44,7 @@ const SignUpCard = () => {
     setPassword(password_para);
   };
   const validatePassword = (password: string) => {
-    const PasswordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/;
+    const PasswordRegex = DATA.passwordregex;
 
     return PasswordRegex.test(password);
   };
