@@ -1,0 +1,16 @@
+import ContractTable from '../ContractTable';
+import SummaryCardHeader from '../../Molecules/SummaryCardHeader';
+import './index.css';
+import { StyledPaper } from '../../Atoms/Paper/Paper.styles';
+const TableSection = () => {
+  return (
+    <StyledPaper customheight="600">
+      <section id="contract-table">
+        <SummaryCardHeader text="Your Contracts" />
+      </section>
+      <ContractTable />
+    </StyledPaper>
+  );
+};
+
+export default TableSection;

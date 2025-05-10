@@ -1,0 +1,10 @@
+#contract-table {
+  padding: 10px;
+  display: flex;
+}
+.scroll-container {
+  overflow-x: scroll;
+  width: 100%;
+  background-color: 'pink';
+  scrollbar-width: '5px';
+}

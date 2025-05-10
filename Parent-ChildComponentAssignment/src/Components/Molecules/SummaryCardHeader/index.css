@@ -1,0 +1,23 @@
+#SummaryCardHeader {
+  width: 276px;
+  height: 29px;
+  display: flex;
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 100;
+}
+
+#SummaryCardHeader p {
+  width: 170px;
+  height: 29px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: -0.5%;
+}
+
+#SummaryCardHeader img {
+  width: 20px;
+  height: 22px;
+  /* gap: 8px; */
+  margin-top: 5px;
+}
