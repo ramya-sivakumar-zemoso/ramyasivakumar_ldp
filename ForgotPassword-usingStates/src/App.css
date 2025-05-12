@@ -1,0 +1,12 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background-color: rgba(62, 60, 60, 0.945);
+}
+
+@font-face {
+  font-family: 'Gilroy-Regular';
+  src: url('../fonts/Gilroy/Gilroy-Regular.ttf');
+}
