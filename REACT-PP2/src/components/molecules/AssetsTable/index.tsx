@@ -60,7 +60,7 @@ const AssetsTableBody = ({
               variant="h1"
               color={
                 showChangeColor
-                  ? data.change.startsWith('+')
+                  ? data.change[0] == '+'
                     ? theme.palette.secondary.main
                     : theme.palette.secondary.light
                   : 'inherit'

@@ -63,7 +63,7 @@ const AssetsTable = () => {
           rows={tab === 'All Assets' ? allAssets : watchlist}
           watchlist={watchlist}
           onToggleWatchlist={handleWatchToggle}
-          showChangeColor={tab === 'All Assets'}
+          showChangeColor={true}
         />
       </Table>
     </Stack>
