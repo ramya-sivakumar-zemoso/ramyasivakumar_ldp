@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Notes App</title>
+  </head>
+  <body>
+    <h2>Local Note (Saved Always)</h2>
+    <textarea
+      id="localNote"
+      rows="4"
+      cols="50"
+      placeholder="Type a note to keep forever..."
+    ></textarea>
+    <br /><br />
+
+    <h2>Session Note (Clears on Close)</h2>
+    <textarea
+      id="sessionNote"
+      rows="4"
+      cols="50"
+      placeholder="Type a note for this session..."
+    ></textarea>
+
+    <script>
+      const localBox = document.getElementById('localNote');
+      const sessionBox = document.getElementById('sessionNote');
+      localBox.value = localStorage.getItem('localNote') || '';
+      sessionBox.value = sessionStorage.getItem('sessionNote') || '';
+      localBox.addEventListener('input', () => {
+        localStorage.setItem('localNote', localBox.value);
+      });
+
+      sessionBox.addEventListener('input', () => {
+        sessionStorage.setItem('sessionNote', sessionBox.value);
+      });
+    </script>
+  </body>
+</html>
