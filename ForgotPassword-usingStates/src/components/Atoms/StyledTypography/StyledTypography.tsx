@@ -1,5 +1,4 @@
-import StyledTypography from './index';
-
+import StyledTypography from '.';
 interface StyledTypographyType {
   children?: string;
 }

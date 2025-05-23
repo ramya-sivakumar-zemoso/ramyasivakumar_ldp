@@ -1,4 +1,5 @@
 import { Paper, styled } from '@mui/material';
+import theme from '../../../theme/theme';
 
 interface StyledPaperProps {
   customwidth?: number | string;
@@ -8,14 +9,14 @@ interface StyledPaperProps {
 }
 
 const StyledPaper = styled(Paper)<StyledPaperProps>((props) => ({
-  width: props.customwidth || 434,
-  height: props.customheight || 111,
-  top: 236,
-  left: 729,
-  borderRadius: props.customradius || 12,
+  width: props.customwidth || theme.spacing(109),
+  height: props.customheight || theme.spacing(28),
+  top: theme.spacing(59),
+  left: theme.spacing(183),
+  borderRadius: props.customradius || theme.spacing(3),
   borderWidth: 1,
-  gap: 12,
-  padding: 24,
-  backgroundColor: props.custombgcolor || '#201f24',
+  gap: theme.spacing(3),
+  padding: theme.spacing(8),
+  backgroundColor: props.custombgcolor || theme.palette.primary.light,
 }));
 export default StyledPaper;

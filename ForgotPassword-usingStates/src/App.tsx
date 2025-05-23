@@ -1,12 +1,13 @@
 import './App.css';
 import { Stack, TextField, ThemeProvider } from '@mui/material';
-import theme from './theme';
-import { StyledStack } from './components/Atoms/StyledStack';
-import StyledButton from './components/Atoms/StyledButton';
+import theme from './theme/theme';
+import { StyledStack } from './components/atoms/StyledStack';
+import StyledButton from './components/atoms/StyledButton';
 import { useState } from 'react';
-import EmailSentBanner from './components/Molecules/EmailSentBanner';
-import StyledPaper from './components/Atoms/StyledPaper';
-import StyledTypography from './components/Atoms/StyledTypography';
+import EmailSentBanner from './components/molecules/EmailSentBanner';
+import StyledPaper from './components/atoms/StyledPaper';
+import StyledTypography from './components/atoms/StyledTypography';
+import DATA from './utils/constants';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -33,36 +34,37 @@ function App() {
     <ThemeProvider theme={theme}>
       <Stack direction={'row'}>
         <StyledPaper
-          customwidth={575}
-          customheight={779}
-          custombgcolor="#393552"
+          customwidth={theme.spacing(143)}
+          customheight={theme.spacing(36)}
+          custombgcolor={theme.palette.secondary.contrastText}
           customradius={-1}
         ></StyledPaper>
-        <Stack marginLeft={5} spacing={2} marginTop={10}>
+        <Stack
+          marginLeft={theme.spacing(1)}
+          spacing={theme.spacing(0.5)}
+          marginTop={theme.spacing(3)}
+        >
           <StyledTypography
-            customfontsize={24}
-            customfontweight={700}
-            customcolor={'#E8E7F0'}
+            customfontsize={theme.spacing(6)}
+            customfontweight={theme.spacing(175)}
+            customcolor={theme.palette.primary.main}
           >
-            Forgot Password
+            {DATA.title}
           </StyledTypography>
 
           <StyledTypography customfontsize={18}>
-            No worries, we’ll send you link to your email id to reset your
-            password
+            {DATA.helper_text}
           </StyledTypography>
 
           {!showBanner ? (
             <>
               <TextField
                 variant="outlined"
-                placeholder="Enter your email id"
+                placeholder={DATA.email_placeholder}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 error={emailError}
-                helperText={
-                  emailError ? 'Please enter a valid email address' : ''
-                }
+                helperText={emailError ? DATA.invalid_email_alert_text : ''}
                 fullWidth
               />
             </>
@@ -73,15 +75,20 @@ function App() {
             onClick={handleResetClick}
             disabled={email.trim() === ''}
           >
-            <StyledTypography customfontsize={16}>
+            <StyledTypography customfontsize={theme.spacing(4)}>
               {beforebtext}
             </StyledTypography>
           </StyledButton>
 
           <StyledStack direction={'row'}>
-            <StyledTypography customfontsize={18}>Go back to</StyledTypography>
-            <StyledTypography customfontsize={18} customcolor="#b4a9ff">
-              Login
+            <StyledTypography customfontsize={theme.spacing(4)}>
+              {DATA.go_back}
+            </StyledTypography>
+            <StyledTypography
+              customfontsize={theme.spacing(4)}
+              customcolor={theme.palette.secondary.dark}
+            >
+              {DATA.login}
             </StyledTypography>
           </StyledStack>
         </Stack>
