@@ -4,6 +4,7 @@ import { DATA } from '../../../Utils/constants';
 import { Typography } from '../../atoms/Typography';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import { theme } from '../../../Theme/theme';
 
 interface IStyledButton {
   customheight?: string | number;
@@ -12,14 +13,19 @@ interface IStyledButton {
 }
 
 export const StyledButton = styled(Button)<IStyledButton>((props) => ({
-  height: props.customheight || 44,
-  width: props.customwidth || 151,
-  borderRadius: props.customborder || 4,
+  height: props.customheight || theme.spacing(22),
+  width: props.customwidth || theme.spacing(76),
+  borderRadius: props.customborder || theme.spacing(2),
 }));
 
 export const ActionButtons = () => {
   return (
-    <Stack direction={'row'} spacing={2} gap={'8px'} paddingTop={'8px'}>
+    <Stack
+      direction={'row'}
+      spacing={theme.spacing(2)}
+      gap={theme.spacing(4)}
+      paddingTop={theme.spacing(4)}
+    >
       <StyledButton
         label={DATA.library}
         variant="contained"

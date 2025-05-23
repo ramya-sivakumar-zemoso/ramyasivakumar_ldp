@@ -29,4 +29,5 @@ export const theme = createTheme({
       main: '#2cE080',
     },
   },
+  spacing: 2,
 });

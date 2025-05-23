@@ -15,15 +15,15 @@ interface StyledImageProps {
 }
 
 const StyledImageAtom = styled(ImageAtom)<StyledImageProps>(() => ({
-  height: '304px',
-  width: '304px',
+  height: theme.spacing(152),
+  width: theme.spacing(152),
 }));
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Stack direction={'row'} spacing={'125px'}>
-        <Stack gap={'8px'}>
+      <Stack direction={'row'} spacing={theme.spacing(62)}>
+        <Stack gap={theme.spacing(4)}>
           <Typography variant="body2" color="primary">
             {DATA.subtitle}
           </Typography>
@@ -36,7 +36,11 @@ function App() {
           <Typography variant="body1" color="primary.light">
             {DATA.author}
           </Typography>
-          <Stack direction={'row'} spacing={2} paddingTop={'20px'}>
+          <Stack
+            direction={'row'}
+            spacing={theme.spacing(1)}
+            paddingTop={theme.spacing(10)}
+          >
             <InfoMolecule source={Timer} text={DATA.readtime}></InfoMolecule>
             <InfoMolecule source={Headset} text={DATA.audio}></InfoMolecule>
           </Stack>
