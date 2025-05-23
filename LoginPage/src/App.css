@@ -1,0 +1,16 @@
+#app {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+#right {
+  background: black;
+  padding-left: 150px;
+  padding-top: 50px;
+  padding-right: 150px;
+}
+#left {
+  background: #393552;
+  width: 575px;
+  height: 585px;
+}
