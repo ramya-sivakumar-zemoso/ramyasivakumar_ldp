@@ -1,5 +1,5 @@
-import { HeaderText } from '../../Atoms/HeaderText';
-import { TextLink } from '../../Atoms/TextLink';
+import { HeaderText } from '../../atoms/HeaderText';
+import { TextLink } from '../../atoms/TextLink';
 import './index.css';
 const SignUpRequest = () => {
   return (

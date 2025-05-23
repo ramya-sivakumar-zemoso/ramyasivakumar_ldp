@@ -1,4 +1,4 @@
-import { HeaderText } from '../../Atoms/HeaderText';
+import { HeaderText } from '../../atoms/HeaderText';
 import './index.css';
 const LoginTitle = () => {
   return (

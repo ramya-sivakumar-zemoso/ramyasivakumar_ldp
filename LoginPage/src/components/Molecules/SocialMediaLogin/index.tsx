@@ -1,4 +1,4 @@
-import SocialMediaCard from '../../Atoms/SocialMediaCard';
+import SocialMediaCard from '../../atoms/SocialMediaCard';
 import './index.css';
 const SocialMediaLogin = () => {
   return (

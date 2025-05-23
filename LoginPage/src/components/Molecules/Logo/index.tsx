@@ -1,5 +1,5 @@
-import { HeaderText } from '../../Atoms/HeaderText';
-import ImageAtom from '../../Atoms/ImageAtom';
+import { HeaderText } from '../../atoms/HeaderText';
+import ImageAtom from '../../atoms/ImageAtom';
 import logo from '../../../assets/logo.png';
 import './index.css';
 const Logo = () => {
