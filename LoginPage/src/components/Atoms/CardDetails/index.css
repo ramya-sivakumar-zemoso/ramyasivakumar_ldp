@@ -1,0 +1,9 @@
+#cards {
+  display: flex;
+  justify-content: center;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  color: black;
+  align-items: center;
+  padding: 10px;
+}
