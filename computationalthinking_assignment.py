@@ -31,9 +31,9 @@ while a:
 alice_sum = sum(alice_numbers)
 
 if alice_sum % 2 == 0:
-    print("Alice")
+    print("Alice Won the game")
 else:
-    print("Bob")
+    print("Bob Won the game")
 
 print("Alice's selected numbers:", alice_numbers)
 print("Bob's selected numbers:", bob_numbers)
