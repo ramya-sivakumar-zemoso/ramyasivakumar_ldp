@@ -1,7 +1,7 @@
 import ContractTable from '../ContractTable';
-import SummaryCardHeader from '../../Molecules/SummaryCardHeader';
+import SummaryCardHeader from '../../molecules/SummaryCardHeader';
 import './index.css';
-import { StyledPaper } from '../../Atoms/Paper/Paper.styles';
+import { StyledPaper } from '../../atoms/Paper/Paper.styles';
 const TableSection = () => {
   return (
     <StyledPaper customheight="600">

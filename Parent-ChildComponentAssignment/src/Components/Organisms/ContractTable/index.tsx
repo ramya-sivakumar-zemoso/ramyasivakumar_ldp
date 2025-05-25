@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import './index.css';
 import { Table, TableBody, TableHead, TableRow, Checkbox } from '@mui/material';
-import {
-  StyledTableCell,
-  StyledTableContainer,
-} from '../../Atoms/Table/index.ts';
+import { StyledTableCell, StyledTableContainer } from '../../atoms/Table';
 
 interface Contract {
   name: string;

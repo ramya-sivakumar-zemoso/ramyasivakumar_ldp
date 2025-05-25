@@ -5,7 +5,7 @@ export const theme = createTheme({
     fontFamily: 'Gilroy',
     h1: {
       fontSize: '24px',
-      //   fontWeight: 1000,
     },
   },
+  spacing: 4,
 });

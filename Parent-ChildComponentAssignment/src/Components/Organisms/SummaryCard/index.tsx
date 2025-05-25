@@ -1,12 +1,12 @@
-import SummaryCardHeader from '../../Molecules/SummaryCardHeader';
-import SummarySection1 from '../../Molecules/SummarySection1';
-import DividerLine from '../../Atoms/Divider';
+import SummaryCardHeader from '../../molecules/SummaryCardHeader';
+import SummarySection1 from '../../molecules/SummarySection1';
+import DividerLine from '../../atoms/Divider';
 import './index.css';
-import { StyledPaper } from '../../Atoms/Paper/Paper.styles';
-import MUIButton from '../../Atoms/Button';
-import { MUIChip } from '../../Atoms/Chip';
-import { StyledText } from '../../Atoms/Typography/index.styles';
-import ResetSlider from '../../Atoms/ResetSlider';
+import { StyledPaper } from '../../atoms/Paper/Paper.styles';
+import MUIButton from '../../atoms/Button';
+import { MUIChip } from '../../atoms/Chip';
+import { StyledText } from '../../atoms/Typography/index.styles';
+import ResetSlider from '../../atoms/ResetSlider';
 
 const SummaryCard = () => {
   return (

@@ -1,6 +1,6 @@
 //import { SxProps, Theme } from '@mui/material';
 import { SxProps } from '@mui/material';
-import { StyledText } from '../../Atoms/Typography/index.styles';
+import { StyledText } from '../../atoms/Typography/index.styles';
 import './index.css';
 
 type SummaryRowItemType = {
