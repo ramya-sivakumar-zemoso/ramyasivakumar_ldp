@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MUIIcon component > applies MUI props correctly (color, fontSize) 1`] = `
+<span
+  aria-hidden="true"
+  class="material-icons notranslate MuiIcon-root MuiIcon-colorPrimary MuiIcon-fontSizeLarge css-v2t6vg-MuiIcon-root"
+>
+  home
+</span>
+`;
