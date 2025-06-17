@@ -1,0 +1,31 @@
+# DICTIONARY EXAMPLE
+dictionary = {
+    'k1': '1',
+    'k2': ['1', '2', '3'],
+    'k3': {'inner_keys': ['4', '5', '6']}
+}
+
+# ACCESSING DICTIONARY ELEMENTS
+print("Value of 'k1':", dictionary['k1'])                    
+print("First character of value in 'k1':", dictionary['k1'][0])  
+print("Second element from 'inner_keys':", dictionary['k3']['inner_keys'][1])  
+
+# DICTIONARY METHODS
+items = {
+    'Item1': 100,
+    'Item2': 200,
+    'Item3': 300
+}
+
+# ACCESSING KEYS
+print("Keys in dictionary:", items.keys())  
+
+# ACCESSING VALUES
+print("Values in dictionary:", items.values())  
+
+# ACCESSING KEY-VALUE PAIRS
+print("Items in dictionary:", items.items())  
+
+# ADDING A NEW ITEM
+items['Item4'] = 400
+print("Updated dictionary after adding Item4:", items)
