@@ -1,6 +1,6 @@
 #Exceptions using raise
 def validate_age(age):
-    if not isinstance(age, (int, float)):
+    if not isinstance(age,int):
         raise TypeError("Age must be a number.")
     if age < 0:
         raise ValueError("Age cannot be negative.")
@@ -24,17 +24,7 @@ print(divide(10, 2))
 
 
 #custom exceptions
-class InsufficientFundsError(Exception):
-    def __init__(self, required_amount, available_amount, message="Insufficient funds"):
-        self.required_amount = required_amount
-        self.available_amount = available_amount
-        self.message = message
-        super().__init__(self.message)
-
-    def __str__(self):
-        return (f"{self.message}: You need ${self.required_amount}, "
-                f"but only have ${self.available_amount}.")
-
+from custom_exception_class import InsufficientFundsError
 def withdraw(balance, amount):
     if amount > balance:
         raise InsufficientFundsError(amount, balance)

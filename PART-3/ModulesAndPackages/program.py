@@ -1,3 +1,3 @@
 #modules
-import ModulesAndPackages.mymodule as mymodule
+from ModulesAndPackages import mymodule as mymodule
 print(mymodule.greet("Alice"))
