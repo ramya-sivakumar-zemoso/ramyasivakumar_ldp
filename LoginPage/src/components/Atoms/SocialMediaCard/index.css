@@ -1,0 +1,29 @@
+#social-media-card {
+  width: 129.6666717529297px;
+  height: 96px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: #201f24;
+  margin-top: 20px;
+}
+
+#social-media-card img {
+  width: 20px;
+  height: 20px;
+}
+
+#social-media-card p {
+  font-family: Gilroy;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: capitalize;
+  color: white;
+}

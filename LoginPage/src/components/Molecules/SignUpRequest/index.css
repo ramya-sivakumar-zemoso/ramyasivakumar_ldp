@@ -1,0 +1,18 @@
+#sign-up {
+  width: 270px;
+  height: 27px;
+  top: 688px;
+  left: 729px;
+  display: flex;
+  color: #a5a5a6;
+  margin-top: 30px;
+}
+
+#sign-up #link {
+  width: 71px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b4a9ff;
+}
