@@ -1,0 +1,13 @@
+{
+  "assignments": [
+    { "id": 1, "name": "Assignment 1: Atomic Design" },
+    {
+      "id": 2,
+      "name": "Assignment 2 : Creating components using best practices"
+    },
+    {
+      "id": 3,
+      "name": "Assignment 3 : Implementation of Parent Child Component"
+    }
+  ]
+}
