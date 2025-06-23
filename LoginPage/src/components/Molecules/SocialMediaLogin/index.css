@@ -1,0 +1,11 @@
+#social-media-login {
+  width: 429px;
+  height: 96px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+  margin-top: 20px;
+}
