@@ -11,8 +11,12 @@ class Graph:
         self.adj_list[v].append(u)
 
     def bfs(self, start):
-        visited = []         
-        queue = [start]        
+        if start not in self.adj_list:
+            print(f"Start vertex '{start}' does not exist in the graph.")
+            return
+
+        visited = set()          
+        queue = [start]          
 
         print("BFS Traversal:", end=" ")
 
@@ -22,10 +26,11 @@ class Graph:
 
             if vertex not in visited:
                 print(vertex, end=" ")
-                visited.append(vertex)
+                visited.add(vertex)
                 for neighbor in self.adj_list[vertex]:
                     if neighbor not in visited and neighbor not in queue:
                         queue.append(neighbor)
+
 
 g = Graph()
 g.add_edge('A', 'B')
@@ -35,4 +40,5 @@ g.add_edge('C', 'E')
 g.add_edge('D', 'F')
 g.add_edge('E', 'F')
 
-g.bfs('A')
+g.bfs('A')   
+g.bfs('Z')   

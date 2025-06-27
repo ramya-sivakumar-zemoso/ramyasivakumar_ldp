@@ -15,7 +15,12 @@ class Graph:
         self.graph[v].append(u)
 
     def dfs(self, start):
-        visited = []  
+        if start not in self.graph:
+            print(f"Start vertex '{start}' does not exist in the graph.")
+            return
+
+        visited = set()
+        print("DFS Traversal:", end=" ")
         self._dfs_helper(start, visited)
 
     def _dfs_helper(self, vertex, visited):
@@ -26,6 +31,7 @@ class Graph:
             if neighbor not in visited:
                 self._dfs_helper(neighbor, visited)
 
+
 g = Graph()
 g.add_edge('A', 'B')
 g.add_edge('A', 'C')
@@ -34,4 +40,6 @@ g.add_edge('C', 'E')
 g.add_edge('D', 'F')
 
 print("DFS traversal starting from vertex A:")
-g.dfs('A')
+g.dfs('A') 
+print("\nDFS traversal starting from vertex Z:")
+g.dfs('Z') 
