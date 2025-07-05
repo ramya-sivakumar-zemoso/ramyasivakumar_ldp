@@ -5,14 +5,14 @@ Output: 4
 """
 
 
-#Time complexity --> O(n^2) 
+#Time complexity --> O(n^2)  Space complexity:O(1)
 input=[4,1,2,1,2,3,6,1,6,7,7]
 for value in input:
   if(input.count(value))==1:
     print("Value with frequency one is:",value)
     break
 
-#Efficient approach --> O(n)
+#Efficient approach --> O(n) Space complexity:O(1)
 input = [4, 1, 2, 1, 2]
 
 unique_value = 0

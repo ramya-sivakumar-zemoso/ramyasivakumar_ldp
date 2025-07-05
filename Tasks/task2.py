@@ -19,15 +19,22 @@ class BankAccount:
     def __init__(self, balance):
         self.__balance = balance
     def deposit(self,deposit_amount):
-        if deposit_amount > 0:
+        try:
+            if deposit_amount < 0:
+                raise ValueError("Deposit amount cannot be negative.")
             self.__balance += deposit_amount
+        except ValueError as ve:
+            print(f"Deposit Error: {ve}")
+
     def withdraw(self,withdraw_amount):
-        if withdraw_amount > self.__balance:
-            print("Insufficient funds")
-        else:
+        try:
+            if withdraw_amount < 0:
+                raise ValueError("Withdrawal amount cannot be negative.")
+            if withdraw_amount > self.__balance:
+                raise ValueError("Insufficient funds.")
             self.__balance -= withdraw_amount
-    def get_balance(self):
-        return self.__balance
+        except ValueError as ve:
+            print(f"Withdrawal Error: {ve}")
 
 acc = BankAccount(1000)
 acc.deposit(500)
