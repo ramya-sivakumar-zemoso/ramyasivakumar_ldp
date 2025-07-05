@@ -76,13 +76,13 @@ class Stack:
     def display(self):
         print("Stack:", self.stack)
 
-s = Stack()
-s.push(10)
-s.push(20)
-s.push(30)
-s.display()
+stack = Stack()
+stack.push(10)
+stack.push(20)
+stack.push(30)
+stack.display()
 
-s.pop()
-s.display()
+stack.pop()
+stack.display()
 
-print("Top element:", s.peek())
+print("Top element:", stack.peek())

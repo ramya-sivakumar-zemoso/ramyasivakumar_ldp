@@ -32,15 +32,15 @@ class Queue:
 
 
 # Using the Queue class
-q = Queue()
+queue = Queue()
 
-q.enqueue(10)
-q.enqueue(20)
-q.enqueue(30)
-q.display()         
+queue.enqueue(10)
+queue.enqueue(20)
+queue.enqueue(30)
+queue.display()         
 
-print("Dequeued:", q.dequeue())  
-q.display()        
-print("Front item:", q.peek())  
-print("Queue is empty:", q.is_empty())  
-print("Queue size:", q.size())  
+print("Dequeued:", queue.dequeue())  
+queue.display()        
+print("Front item:", queue.peek())  
+print("Queue is empty:", queue.is_empty())  
+print("Queue size:", queue.size())  

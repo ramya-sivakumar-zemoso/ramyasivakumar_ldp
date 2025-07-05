@@ -32,13 +32,13 @@ class Graph:
                         queue.append(neighbor)
 
 
-g = Graph()
-g.add_edge('A', 'B')
-g.add_edge('A', 'C')
-g.add_edge('B', 'D')
-g.add_edge('C', 'E')
-g.add_edge('D', 'F')
-g.add_edge('E', 'F')
+graph = Graph()
+graph.add_edge('A', 'B')
+graph.add_edge('A', 'C')
+graph.add_edge('B', 'D')
+graph.add_edge('C', 'E')
+graph.add_edge('D', 'F')
+graph.add_edge('E', 'F')
 
-g.bfs('A')   
-g.bfs('Z')   
+graph.bfs('A')   
+graph.bfs('Z')   

@@ -32,14 +32,14 @@ class Graph:
                 self._dfs_helper(neighbor, visited)
 
 
-g = Graph()
-g.add_edge('A', 'B')
-g.add_edge('A', 'C')
-g.add_edge('B', 'D')
-g.add_edge('C', 'E')
-g.add_edge('D', 'F')
+graph= Graph()
+graph.add_edge('A', 'B')
+graph.add_edge('A', 'C')
+graph.add_edge('B', 'D')
+graph.add_edge('C', 'E')
+graph.add_edge('D', 'F')
 
 print("DFS traversal starting from vertex A:")
-g.dfs('A') 
+graph.dfs('A') 
 print("\nDFS traversal starting from vertex Z:")
-g.dfs('Z') 
+graph.dfs('Z') 
