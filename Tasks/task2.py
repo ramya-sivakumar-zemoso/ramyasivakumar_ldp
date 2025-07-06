@@ -18,6 +18,8 @@ print(acc.__balance)  # This should raise an AttributeError
 class BankAccount:
     def __init__(self, balance):
         self.__balance = balance
+    def get_balance(self):
+         return self.__balance
     def deposit(self,deposit_amount):
         try:
             if deposit_amount < 0:
