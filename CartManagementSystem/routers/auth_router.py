@@ -21,7 +21,7 @@ async def create_user(db: db_dependency, request: auth_services.CreateUserReques
 async def login_for_access_token(form_data: Annotated[OAuth2PasswordRequestForm, Depends()], db: db_dependency):
     user = auth_services.authenticate_user(form_data.username, form_data.password, db)
     if not user:
-        raise HTTPException(status_code=401, detail={INVALID_CREDENTIALS})
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail={INVALID_CREDENTIALS})
     token = auth_services.create_access_token(user.username, user.user_id, user.role, timedelta(minutes=20))
     return {"access_token": token, "token_type": "bearer"}
 
@@ -30,7 +30,7 @@ async def login_for_access_token(form_data: Annotated[OAuth2PasswordRequestForm,
 async def get_my_profile(current_user: Annotated[dict, Depends(get_current_user)], db: db_dependency):
     user = auth_services.get_user_profile(current_user["user_id"], db)
     if not user:
-        raise HTTPException(status_code=404, detail={USER_NOT_FOUND})
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail={USER_NOT_FOUND})
     return {
         "user_id": user.user_id,
         "username": user.username,
@@ -43,7 +43,7 @@ async def get_my_profile(current_user: Annotated[dict, Depends(get_current_user)
 @router.get("/users", status_code=status.HTTP_200_OK)
 async def get_all_users(db: db_dependency, current_user: Annotated[dict, Depends(get_current_user)]):
     if current_user["user_role"] != "admin":
-        raise HTTPException(status_code=403, detail={ADMIN_ONLY_ACCESS})
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail={ADMIN_ONLY_ACCESS})
     users = auth_services.get_all_users(db)
     return [
         {

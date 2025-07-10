@@ -1,9 +1,8 @@
 from sqlalchemy.orm import Session
 from models.products_model import Products
-from fastapi import HTTPException, status
-from pydantic import BaseModel
-from typing import Optional
-from schema.product_schema import ProductCreate,ProductUpdate
+from fastapi import HTTPException
+from starlette import status
+from schema.product_schema import CreateProductRequest,ProductUpdateRequest
 from utils.constants import PRODUCT_DELETE_SUCCESS, PRODUCT_NOT_FOUND
 
 
@@ -14,10 +13,10 @@ def get_all_products(db: Session):
 def get_product(product_id: str, db: Session):
     product = db.query(Products).filter(Products.product_id == product_id).first()
     if not product:
-        raise HTTPException(status_code=404, detail={PRODUCT_NOT_FOUND})
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail={PRODUCT_NOT_FOUND})
     return product 
 
-def add_product(data: ProductCreate, db: Session):
+def add_product(data: CreateProductRequest, db: Session):
     new_product = Products(
         name=data.name,
         description=data.description,
@@ -29,7 +28,7 @@ def add_product(data: ProductCreate, db: Session):
     db.commit()
     return new_product
 
-def update_product(product_id: str, data: ProductCreate, db: Session):
+def update_product(product_id: str, data: CreateProductRequest, db: Session):
     updated_product = get_product(product_id, db)
     updated_product.name = data.name
     updated_product.description = data.description
@@ -41,7 +40,7 @@ def update_product(product_id: str, data: ProductCreate, db: Session):
     return updated_product
 
 
-def patch_product(product_id: str, updates: ProductUpdate, db: Session):
+def patch_product(product_id: str, updates: ProductUpdateRequest, db: Session):
     updated_product_detail = get_product(product_id, db)
     if updates.name is not None:
         updated_product_detail.name = updates.name
