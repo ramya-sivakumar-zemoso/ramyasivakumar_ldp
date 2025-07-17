@@ -8,7 +8,7 @@ from starlette import status
 from utils.constants import NO_ITEMS_IN_CART, PRODUCT_NOT_FOUND, CART_ITEM_NOT_FOUND
 
 def add_to_cart(user_id: int, cart: CartRequest, db: Session):
-    product = db.query(Products).filter(func.lower(Products.product_id) == cart.product_id).first()
+    product = db.query(Products).filter(Products.product_id) == cart.product_id.first()
     if not product:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail={PRODUCT_NOT_FOUND})
 

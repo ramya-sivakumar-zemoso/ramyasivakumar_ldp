@@ -1,5 +1,5 @@
 from fastapi import FastAPI,Request
-from routers import auth_router, cart_router
+from routers import auth_router, cart_router , book_router
 from exceptions.exception import validation_exception_handler  
 from fastapi.exceptions import RequestValidationError
 from routers import products_router
@@ -15,6 +15,7 @@ app.add_exception_handler(RequestValidationError, validation_exception_handler)
 app.include_router(products_router.router)
 app.include_router(auth_router.router)
 app.include_router(cart_router.router)
+app.include_router(book_router.router)
 
 
 @app.middleware("http")
