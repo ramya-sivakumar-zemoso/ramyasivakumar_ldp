@@ -1,0 +1,6 @@
+#summary-section {
+  width: 276px;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+}

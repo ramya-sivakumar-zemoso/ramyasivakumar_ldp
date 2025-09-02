@@ -1,0 +1,41 @@
+#Summary-Section {
+  background: #201f24;
+  border: 0.5px solid #28272b;
+  width: 340px;
+  max-height: 513px;
+  margin: 300px;
+  border-radius: 12px;
+  border-width: 1px;
+  padding: 32px;
+  color: white;
+  font-family: 'Gilroy', sans-serif;
+}
+#Summary-Section Button {
+  width: 276px;
+  height: 59px;
+  opacity: 0.56;
+  padding-top: 20px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  gap: 8px;
+  border-radius: 12px;
+  background: #6c5dd3;
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: capitalize;
+  color: #e8e8e9;
+}
+
+#Total span {
+  color: #6c5dd3;
+}
+
+#Rate span {
+  font-size: 12px;
+}
